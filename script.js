@@ -15,8 +15,8 @@ $('.saveBtn').click(function (){
 
 $('.time-block').each (function(){
     var sameId = $(this).attr('id') //looks at the id hour attribute associated with time-block
-    var task = localStorage.getItem(sameId) //make a var to get the info stored
-    $(this).children('.description').val(task)  //trying to show it but idk
+    var task = localStorage.getItem(sameId) //make a var called task equal to the info stored
+    $(this).children('.description').val(task)  //give description the value of task
  
     //how to turn past hours grey (gray?)
     let currentTime = moment().hours() 
@@ -32,6 +32,7 @@ $('.time-block').each (function(){
 
 
 //things to research more in depth
+
 //.val for javacript
 //.eq grabing
 // forEach in javascript === .each in jQuery
@@ -40,11 +41,14 @@ $('.time-block').each (function(){
 
 
 
-// //trying to be able to remove tasks 
+//trying to be able to remove tasks 
     
+//local storage & description
 
-// function handleRemoveItem(event) {
-//     var btnClicked = $(event.target);  
-//     btnClicked.sibling('textArea').remove();
-//   }
-//   tasK.on('click', handleRemoveItem);
+
+function handleRemoveItem(event) {
+    $(this).siblings().eq(1).val('')
+    localStorage.setItem(id, textArea);
+
+  }
+  $('.removeBtn').on('click', handleRemoveItem);
