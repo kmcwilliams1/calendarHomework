@@ -48,7 +48,7 @@ $('.time-block').each (function(){
 
 function handleRemoveItem(event) {
     $(this).siblings().eq(1).val('')
-    localStorage.setItem(id, textArea);
+    localStorage.clear();
 
   }
   $('.removeBtn').on('click', handleRemoveItem);
